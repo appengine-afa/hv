@@ -6,45 +6,21 @@ runtime_config:
 
 skip_files:
 - .env
-- .idea
-- .git
-
-handlers:
-- url: /(.*\.(htm$|html$|css$|js$))
-  static_files: \1
-
-  upload: (.*\.(htm$|html$|css$|js$))
-  application_readable: true
-
-- url: /(.*\.(ico$|jpg$|png$|gif$))
-  static_files: \1
-
-  upload: (.*\.(ico$|jpg$|png$|gif$))
-  application_readable: true
-
-- url: /(.+)
-  script: \1
-
-- url: /.*
-  script: index.php
 
 beta_settings:
-  cloud_sql_instances: hive-platform:us-central1:hive-db
+  cloud_sql_instances: "afa-database:us-central1:hive"
 
 
 env_variables:
- APP_ENV: local
- APP_DEBUG: true
+ APP_ENV: production
+ APP_DEBUG: false
  APP_FULL_NAME: "America For Animals - DEV"
- CAHE_DRIVER: memcached
- SESSION_DRIVER: memcached
- MEMCACHED_HOST: 127.0.0.1
  APP_LOG: errorlog
- APP_KEY: base64:YEnQmBf6a1oscSC7ZZd8y3zKyqb/Cj1gZ63I0xGlavI=
+ APP_KEY: "base64:YEnQmBf6a1oscSC7ZZd8y3zKyqb/Cj1gZ63I0xGlavI="
  DB_CONNECTION: mysql
- DB_HOST: 35.193.164.73
+ DB_HOST: localhost
  DB_USERNAME: hive
  DB_PASSWORD: bfef1515
  DB_DATABASE: hive
- DB_SOCKET: /cloudsql/hive-platform:us-central1:hive-db
+ DB_SOCKET: "/cloudsql/afa-database:us-central1:hive"
  STORAGE_DIR: /tmp
